@@ -13,6 +13,7 @@
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "ant-design-vue": "^1.6.0",
     "@vue/cli-plugin-babel": "~4.5.15",
     "@vue/cli-plugin-eslint": "~4.5.15",
     "@vue/cli-service": "~4.5.15",
