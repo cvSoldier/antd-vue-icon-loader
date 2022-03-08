@@ -4,8 +4,8 @@ module.exports = {
   chainWebpack: config => {
     config.module
       .rule('vue')
-      .use('vue-test-loader')
-        .loader('vue-test-loader')
+      .use('antd-vue-icon-loader')
+        .loader('antd-vue-icon-loader')
         .tap(options => {
           return {
             ...options,
@@ -17,11 +17,11 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@ant-design/icons/lib/dist$': '@/icons.js',
+        '@ant-design/icons/lib/dist$': '@/icon.js',
       },
     },
     resolveLoader: {
-      modules: [path.join(__dirname, './src/loaders'), 'node_modules']
+      modules: [path.join(__dirname, './loader'), 'node_modules']
     },
   }
 }
