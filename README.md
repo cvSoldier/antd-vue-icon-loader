@@ -1,24 +1,32 @@
-# loader-test
+# antd-vue-icon-loader
+使用前后
+![前](./READMEAssets/before.png)
+![后](./READMEAssets/after.png)
+## 使用
+```js
+const path = require('path');
 
-## Project setup
-```
-npm install
-```
+module.exports = {
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('antd-vue-icon-loader')
+        .loader('antd-vue-icon-loader')
+        .tap(options => {
+          return {
+            ...options,
+            filePath: './src/icon.js'
+          }
+        })
+        .end()
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@ant-design/icons/lib/dist$': '@/icon.js',
+      },
+    }
+  }
+}
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
