@@ -1,12 +1,9 @@
-const parser = require("@babel/parser")
+const compiler = require('vue-template-compiler')
 
 module.exports = function(source) {
-  const beginIndex = source.indexOf('<template>')
-  const endIndex = source.indexOf('</template>')
-  const html = source.slice(beginIndex, endIndex + 11)
   
-  const ast = parser.parse(html, {
-    plugins: ['jsx']
+  const { ast } = compiler.compile(source, {
+    whitespace: 'condense'
   })
 
   return source
