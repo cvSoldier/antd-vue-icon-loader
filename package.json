@@ -1,11 +1,12 @@
 {
-  "name": "loader-test",
+  "name": "antd-vue-icon-loader",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev-debug": "node --inspect-brk ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve --mode development"
   },
   "dependencies": {
     "core-js": "^3.6.5",
