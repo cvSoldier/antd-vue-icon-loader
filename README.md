@@ -30,3 +30,8 @@ module.exports = {
 }
 
 ```
+需要注意的是，filePath需要和resolve.alias中'@ant-design/icons/lib/dist$'的value保持一致，并且应该在执行webpack之前保证该路径存在文件。
+因为在loader执行的时候，配置文件已经初始化完成。
+
+![webpack流程](./READMEAssets/webpack打包流程.jpg)
+图片来源(https://zhuanlan.zhihu.com/p/360421184)
