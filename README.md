@@ -35,3 +35,9 @@ module.exports = {
 
 ![webpack流程](./READMEAssets/webpack打包流程.jpg)
 图片来源(https://zhuanlan.zhihu.com/p/360421184)
+
+## to debug
+```
+npm run dev-debug
+```
+chrome浏览器打开 `chrome://inspect/#devices`
