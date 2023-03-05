@@ -30,6 +30,10 @@ function writeToFile(content, iconExportName) {
 }
 
 module.exports = function(source) {
+  // 根据vue-lodaer处理逻辑，避免多次调用loader
+  // https://zhuanlan.zhihu.com/p/355401219
+  if(this.resourceQuery !== '') return source
+
   const options = loaderUtils.getOptions(this) || {}
   filePath = options.filePath
 
