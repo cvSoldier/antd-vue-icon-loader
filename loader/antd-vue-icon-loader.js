@@ -36,7 +36,12 @@ module.exports = function(source) {
   const { ast } = compiler.compile(source, {
     whitespace: 'condense'
   })
-  const arr = [...ast.children]
+  // 从根节点遍历
+  // 避免下面这种情况
+  // <template>
+  //   <a-icon/>
+  // </template>
+  const arr = [ast]
   while(arr.length) {
     const node = arr.shift()
     if(Array.isArray(node.children)) {
